@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/markrookie/rn_request_ability/issues"
   },
-  "homepage": "https://github.com/markrookie/rn_request_ability#readme"
+  "homepage": "https://github.com/markrookie/rn_request_ability#readme",
+  "dependencies": {
+    "axios": "0.21.4"
+  }
 }
