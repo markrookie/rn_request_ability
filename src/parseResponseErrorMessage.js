@@ -11,10 +11,10 @@ export default function parseResponseErrorMessage(response) {
     const {
         data: { errors, error_message: errorMessage, message },
     } = response;
-    console.log(response);
     if (errors) {
         const error = errors[0];
-        return `field ${error.field}, ${error.message} `;
+        const { field, message } = error;
+        return `field ${field}, ${message} `;
     }
     if (typeof errorMessage === 'string') {
         return errorMessage;
