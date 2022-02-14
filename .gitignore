@@ -1,0 +1,5 @@
+# intellij configs
+.idea/
+
+# npm
+node_modules/
