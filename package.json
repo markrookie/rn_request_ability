@@ -1,0 +1,19 @@
+{
+  "name": "rn_request_ability",
+  "version": "1.0.0",
+  "description": "This is a network request library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markrookie/rn_request_ability.git"
+  },
+  "author": "Mark",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/markrookie/rn_request_ability/issues"
+  },
+  "homepage": "https://github.com/markrookie/rn_request_ability#readme"
+}
