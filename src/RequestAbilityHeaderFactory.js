@@ -7,7 +7,7 @@
  * date：  2022/5/30 15:58
  */
 
-export default class RequestAbilityHeader {
+export default class RequestAbilityHeaderFactory {
     #header;
 
     constructor(props) {

@@ -16,15 +16,20 @@ const DEFAULT_TIME_OUT = 10000;
 export default class RequestAbility {
     accessToken;
 
+    headerFactory;
+
     #apiDomain;
 
-    constructor(apiDomain, accessToken) {
+    constructor(apiDomain, accessToken, headerFactory) {
         if (!apiDomain) {
             throw new Error('Please specify an apiDomain');
         }
         this.#apiDomain = apiDomain;
         if (accessToken) {
             this.accessToken = accessToken;
+        }
+        if (headerFactory) {
+            this.headerFactory = headerFactory;
         }
     }
 
