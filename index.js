@@ -11,8 +11,4 @@ import RequestAbility from './src/RequestAbility';
 import DeserializeRequestAbility from './src/DeserializeRequestAbility';
 import RequestAbilityHeaderFactory from './src/RequestAbilityHeaderFactory';
 
-export default {
-    RequestAbility,
-    DeserializeRequestAbility,
-    RequestAbilityHeaderFactory,
-};
+export { RequestAbility, DeserializeRequestAbility, RequestAbilityHeaderFactory };
