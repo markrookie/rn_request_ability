@@ -10,5 +10,11 @@
 import RequestAbility from './src/RequestAbility';
 import DeserializeRequestAbility from './src/DeserializeRequestAbility';
 import RequestAbilityHeaderFactory from './src/RequestAbilityHeaderFactory';
+import ResponseError from './src/ResponseError';
 
-export { RequestAbility, DeserializeRequestAbility, RequestAbilityHeaderFactory };
+export {
+  RequestAbility,
+  DeserializeRequestAbility,
+  RequestAbilityHeaderFactory,
+  ResponseError,
+};
