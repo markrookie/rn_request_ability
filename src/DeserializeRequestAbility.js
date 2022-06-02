@@ -15,4 +15,8 @@ export default class DeserializeRequestAbility extends RequestAbility {
     put(path, header, body, timeout = DEFAULT_TIME_OUT) {
         return super.put(path, header, body, timeout).then((res) => toCamelCase(res));
     }
+
+    delete(path, header, body, timeout = DEFAULT_TIME_OUT) {
+        return super.delete(path, header, body, timeout).then((res) => toCamelCase(res));
+    }
 }
