@@ -10,21 +10,20 @@ import axios from 'axios';
 import ResponseError from './ResponseError';
 import parseResponseErrorMessage from './parseResponseErrorMessage';
 import parseResponseErrorType from './parseResponseErrorType';
-
-const DEFAULT_TIME_OUT = 10000;
-
 export default class RequestAbility {
+    static DEFAULT_TIMEOUT = 10000;
+
     accessToken;
 
     headerFactory;
 
-    #apiDomain;
+    apiDomain;
 
     constructor(apiDomain, accessToken, headerFactory) {
         if (!apiDomain) {
             throw new Error('Please specify an apiDomain');
         }
-        this.#apiDomain = apiDomain;
+        this.apiDomain = apiDomain;
         if (accessToken) {
             this.accessToken = accessToken;
         }
@@ -33,29 +32,37 @@ export default class RequestAbility {
         }
     }
 
+    setApiDomain(apiDomain) {
+        this.apiDomain = apiDomain;
+    }
+
     setAccessToken(accessToken) {
         this.accessToken = accessToken;
     }
 
-    post(path, header, body, timeout = DEFAULT_TIME_OUT) {
+    post(path, header, body, timeout = RequestAbility.DEFAULT_TIMEOUT) {
         return this._request('post', { path, header, body, timeout });
     }
 
-    get(path, header, timeout = DEFAULT_TIME_OUT) {
+    get(path, header, timeout = RequestAbility.DEFAULT_TIMEOUT) {
         return this._request('get', { path, header, timeout });
     }
 
-    put(path, header, body, timeout = DEFAULT_TIME_OUT) {
+    put(path, header, body, timeout = RequestAbility.DEFAULT_TIMEOUT) {
         return this._request('put', { path, header, body, timeout });
     }
 
-    delete(path, header, body, timeout = DEFAULT_TIME_OUT) {
+    delete(path, header, body, timeout = RequestAbility.DEFAULT_TIMEOUT) {
         return this._request('delete', { path, header, body, timeout });
+    }
+
+    patch(path, header, body, timeout = RequestAbility.DEFAULT_TIMEOUT) {
+        return this._request('patch', { path, header, body, timeout });
     }
 
     _request(method, { path, header, body, timeout }) {
         const axiosConfig = {
-            baseURL: this.#apiDomain,
+            baseURL: this.apiDomain,
             method,
             url: path,
             timeout,
