@@ -49,6 +49,10 @@ export default class RequestAbility {
         return this._request('put', { path, header, body, timeout });
     }
 
+    delete(path, header, body, timeout = DEFAULT_TIME_OUT) {
+        return this._request('delete', { path, header, body, timeout });
+    }
+
     _request(method, { path, header, body, timeout }) {
         const axiosConfig = {
             baseURL: this.#apiDomain,
