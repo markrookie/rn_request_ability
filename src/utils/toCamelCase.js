@@ -15,7 +15,7 @@ const toCamelCase = (originObj) => {
             const value = originObj[key];
             const newKey = key.replace(/_(\w)/g, (all, letter) => letter.toUpperCase());
 
-            result[newKey] = isObject(value) ? toCamelCase(value) : value;
+            result[newKey] = toCamelCase(value);
         });
     } else {
         return originObj;
