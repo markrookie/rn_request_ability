@@ -12,7 +12,7 @@ export default class ResponseError extends Error {
         super(message);
         this.path = path;
         this.response = response || {};
-        const { config, status } = response;
+        const { config, status } = this.response;
         this.request = config;
         this.type = type;
         this.status = status;

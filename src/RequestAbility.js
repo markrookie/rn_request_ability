@@ -85,6 +85,8 @@ export default class RequestAbility {
             .catch((error) => {
                 if (error instanceof ResponseError) {
                     throw error;
+                } else if (error.message === 'timeout of 10000ms exceeded') {
+                    throw new ResponseError(error.message, 'timeout', path);
                 } else {
                     const { response } = error;
                     throw new ResponseError(error.message, 'axios_catch_error', path, response);
