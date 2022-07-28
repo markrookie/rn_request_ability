@@ -85,7 +85,7 @@ export default class RequestAbility {
             .catch((error) => {
                 if (error instanceof ResponseError) {
                     throw error;
-                } else if (error.message === 'timeout of 10000ms exceeded') {
+                } else if (error.code === 'ECONNABORTED') {
                     throw new ResponseError(error.message, 'timeout', path);
                 } else {
                     const { response } = error;
