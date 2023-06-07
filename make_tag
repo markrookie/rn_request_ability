@@ -1,0 +1,19 @@
+#!/bin/bash
+echo
+echo "这个脚本将帮助你添加一个新的tag"
+echo
+echo
+echo "正在获取Remote git上最近的5个Tag ..."
+# 获取最新的 5 个 Git 历史标签
+tags=$(git tag --sort=-creatordate | head -n 5)
+
+# 在命令行中显示标签
+echo "最新的 5 个 Git 历史标签:"
+echo "$tags"
+
+read -p "添加一个最新的tag: v" git_tag
+
+git tag v$git_tag || exit
+git push origin v$git_tag
+
+echo "Tag v$git_tag 已经同步到Remote"

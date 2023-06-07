@@ -1,6 +1,6 @@
 {
   "name": "rn_request_ability",
-  "version": "1.1.9",
+  "version": "1.2.0",
   "description": "This is a network request library",
   "main": "index.js",
   "scripts": {
