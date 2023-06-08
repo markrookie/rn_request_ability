@@ -16,7 +16,7 @@ export default class ResponseError extends Error {
         this.request = config;
         this.type = type;
         this.status = status;
-        if (this.status === 404 || this.status === 500) {
+        if (this.status === 404 || this.status === 500 || this.status === 401) {
             this.message += ` ${this.path}`;
         }
     }
