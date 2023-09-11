@@ -9,12 +9,14 @@
 
 import RequestAbility from './src/RequestAbility';
 import DeserializeRequestAbility from './src/DeserializeRequestAbility';
+import LoggerRequestAbility from './src/LoggerRequestAbility';
 import RequestAbilityHeaderFactory from './src/RequestAbilityHeaderFactory';
 import ResponseError from './src/ResponseError';
 
 export {
   RequestAbility,
   DeserializeRequestAbility,
+  LoggerRequestAbility,
   RequestAbilityHeaderFactory,
   ResponseError,
 };
