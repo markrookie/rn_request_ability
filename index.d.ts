@@ -59,6 +59,18 @@ export declare class DeserializeRequestAbility extends RequestAbility {
     protected patch(path: string, header: Record<string, string>, body?: Record<string, any>, timeout?: number): Promise<any>;
 }
 
+export declare class LoggerRequestAbility extends RequestAbility {
+    protected get(path: string, header: Record<string, string>, timeout?: number): Promise<any>;
+
+    protected post(path: string, header: Record<string, string>, body?: Record<string, any>, timeout?: number): Promise<any>;
+
+    protected put(path: string, header: Record<string, string>, body?: Record<string, any>, timeout?: number): Promise<any>;
+
+    protected delete(path: string, header: Record<string, string>, body?: Record<string, any>, timeout?: number): Promise<any>;
+
+    protected patch(path: string, header: Record<string, string>, body?: Record<string, any>, timeout?: number): Promise<any>;
+}
+
 export declare class ResponseError extends Error {
     constructor(message: string, type: string, path: string, response: AxiosResponse);
 }
