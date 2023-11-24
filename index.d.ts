@@ -12,7 +12,7 @@ interface AuthHeader extends Header {
 export declare class RequestAbilityHeaderFactory {
     #header: Header;
 
-    constructor(props: { appId: string; sysLanguage: string });
+    constructor(props: { appId: string; sysLanguage: string, appVersion: string });
 
     authorizedHeader(auth: string): AuthHeader;
 

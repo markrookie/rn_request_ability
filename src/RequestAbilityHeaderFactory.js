@@ -11,12 +11,13 @@ export default class RequestAbilityHeaderFactory {
     #header;
 
     constructor(props) {
-        const { appId, sysLanguage } = props;
+        const { appId, sysLanguage, appVersion } = props;
         this.#header = {
             'Content-Type': 'application/json',
             'APP-ID': appId,
             'Accept-Language': sysLanguage,
-        }
+            APP_VERSION: appVersion,
+        };
     }
 
     authorizedHeader(auth) {
