@@ -16,7 +16,7 @@ export default class RequestAbilityHeaderFactory {
             'Content-Type': 'application/json',
             'APP-ID': appId,
             'Accept-Language': sysLanguage,
-            App_version: appVersion,
+            APP_VERSION: appVersion,
         };
     }
 
